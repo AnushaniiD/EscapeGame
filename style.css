@@ -1,0 +1,186 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+}
+
+.escape-room {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-screen {
+    display: none;
+}
+
+.game-screen.active {
+    display: block;
+}
+
+.room-container {
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-view {
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.inventory {
+    height: 20%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #252525;
+    border-radius: 5px;
+}
+
+.inventory-item {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.inventory-item:hover {
+    transform: scale(1.1);
+    border-color: #777;
+}
+
+.game-info {
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    height: 70vh;
+}
+
+.timer-container, .puzzle-counter {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #252525;
+    border-radius: 5px;
+}
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff5555;
+}
+
+.game-log {
+    height: calc(100% - 200px);
+    overflow-y: auto;
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.log-entry {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #444;
+}
+
+.hotspot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, 0.3);
+    border: 2px dashed yellow;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.hotspot:hover {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+/* Puzzle specific styles */
+.puzzle-container {
+    padding: 20px;
+}
+
+.code-input {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.code-input input {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    border: 2px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+.puzzle-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border: 2px solid #555;
+}
+
+.draggable-item {
+    width: 80px;
+    height: 80px;
+    background-color: #444;
+    border: 2px solid #666;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    cursor: move;
+    text-align: center;
+    line-height: 80px;
+}
+
+.drop-zone {
+    width: 150px;
+    height: 150px;
+    border: 3px dashed #666;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #252525;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .room-container, .game-info {
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .room-view {
+        height: 300px;
+    }
+}
